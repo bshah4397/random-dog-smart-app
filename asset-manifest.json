@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/random-dog-smart-app/static/css/main.9a233b90.css",
-    "main.js": "/random-dog-smart-app/static/js/main.15cc3d91.js",
+    "main.js": "/random-dog-smart-app/static/js/main.4d45aa6b.js",
     "index.html": "/random-dog-smart-app/index.html",
     "main.9a233b90.css.map": "/random-dog-smart-app/static/css/main.9a233b90.css.map",
-    "main.15cc3d91.js.map": "/random-dog-smart-app/static/js/main.15cc3d91.js.map"
+    "main.4d45aa6b.js.map": "/random-dog-smart-app/static/js/main.4d45aa6b.js.map"
   },
   "entrypoints": [
     "static/css/main.9a233b90.css",
-    "static/js/main.15cc3d91.js"
+    "static/js/main.4d45aa6b.js"
   ]
 }
