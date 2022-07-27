@@ -1,26 +1,49 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
-import FHIR from 'fhirclient';
+import { oauth2 as SMART } from "fhirclient";
 
 const rootElement = document.getElementById('root');
 
-const smartLaunch = () => {
+SMART.init({
+    // iss: "https://launch.smarthealthit.org/v/r3/sim/eyJoIjoiMSIsImIiOiJzbWFydC0xNjQyMDY4IiwiZSI6InNtYXJ0LVByYWN0aXRpb25lci03MTYxNDUwMiJ9/fhir",
+    iss: "https://api.platform.athenahealth.com/432/brand/2/csg/12/fhir/r4",
+    redirectUri: "test.html",
+    clientId: "0oamrpbycykHySdrd1t7",       // XDGE Test SMART App
+    // clientId: "0oaoh6jbmiy2NYaOR1t7",    // BMI Calculator
+    scope: "launch/patient offline_access openid fhirUser",
 
-  FHIR.oauth2
-    .init({
-      // clientId: '20560ea5-f224-4658-b667-4e6bab935c85',  // Random clientId
-      // clientId: '29f8073d-e615-406f-9ab8-d22922829a6c',  // Cerner clientId
-      clientId: '0oamrpbycykHySdrd1t7',                     // XDGE clientId
-      scope: 'launch/patient openid profile'
-      // scope: 'launch openid profile'
-    })
+    // WARNING: completeInTarget=true is needed to make this work in the codesandbox
+    // frame. It is otherwise not needed if the target is not another frame or window
+    // but since the entire example works in a frame here, it gets confused without
+    // setting this!
+    completeInTarget: true
+})
     .then(client => {
-      console.log("SmartApp:Client => ", client);
-      ReactDOM.render(<App client={client} />, rootElement);
-    });
-};
-
-smartLaunch();
+        // Fetch MedicationRequest and Patient in parallel to load the app faster
+        return Promise.all([
+            client.patient.read(),
+            client.request(`/MedicationRequest?patient=${client.patient.id}`, {
+                resolveReferences: "medicationReference",
+                pageLimit: 0,
+                flat: true
+            })
+        ]);
+    })
+    .then(
+        ([patient, meds]) => {
+            render(<App patient={patient} meds={meds} />, rootElement);
+        },
+        error => {
+            console.error(error);
+            render(
+                <>
+                    <br />
+                    <pre>{error.stack}</pre>
+                </>,
+                rootElement
+            );
+        }
+    );
