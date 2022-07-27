@@ -11,8 +11,10 @@ SMART.init({
     // iss: "https://launch.smarthealthit.org/v/r3/sim/eyJoIjoiMSIsImIiOiJzbWFydC0xNjQyMDY4IiwiZSI6InNtYXJ0LVByYWN0aXRpb25lci03MTYxNDUwMiJ9/fhir",
     iss: "https://api.platform.athenahealth.com/432/brand/2/csg/12/fhir/r4",
     redirectUri: "test.html",
-    clientId: "0oamrpbycykHySdrd1t7",       // XDGE Test SMART App
-    // clientId: "0oaoh6jbmiy2NYaOR1t7",    // BMI Calculator
+    clientId: "0oae0chrocZumXh7y297",          // XDGE Test SMART App (prod)
+    // clientId: "0oamrpbycykHySdrd1t7",       // XDGE Test SMART App (dev)
+    // clientId: "",                           // BMI Calculator (prod)
+    // clientId: "0oaoh6jbmiy2NYaOR1t7",       // BMI Calculator (dev)
     scope: "launch/patient offline_access openid fhirUser",
 
     // WARNING: completeInTarget=true is needed to make this work in the codesandbox
