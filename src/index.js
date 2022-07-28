@@ -10,7 +10,7 @@ const rootElement = document.getElementById('root');
 SMART.init({
     iss: "https://launch.smarthealthit.org/v/r3/sim/eyJoIjoiMSIsImIiOiJzbWFydC0xNjQyMDY4IiwiZSI6InNtYXJ0LVByYWN0aXRpb25lci03MTYxNDUwMiJ9/fhir",
     // iss: "https://api.platform.athenahealth.com/432/brand/2/csg/12/fhir/r4", //TODO:
-    redirectUri: "test.html",
+    redirectUri: "/",
     clientId: "0oae0chrocZumXh7y297",          // XDGE Test SMART App (prod)
     // clientId: "0oamrpbycykHySdrd1t7",       // XDGE Test SMART App (dev)
     // clientId: "",                           // BMI Calculator (prod)
