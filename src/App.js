@@ -107,7 +107,9 @@ function MedRow({ med }) {
   );
 }
 
-function App({ patient, meds }) {
+function App({ patient, meds, everything }) {
+  console.log(patient);
+  console.log(everything);
   return (
     <div className="App" style={{padding: '20px'}}>
       {patient ? <PatientVisualizer patient={patient} /> : <h1>Loading</h1>}

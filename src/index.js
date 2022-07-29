@@ -8,8 +8,8 @@ import { oauth2 as SMART } from "fhirclient";
 const rootElement = document.getElementById('root');
 
 SMART.init({
-    iss: "https://r4.smarthealthit.org",
-    // iss: "https://api.platform.athenahealth.com/432/brand/2/csg/12/fhir/r4",
+    // iss: "https://r4.smarthealthit.org",
+    iss: "https://api.platform.athenahealth.com/432/brand/2/csg/12/fhir/r4",
     redirectUri: "index.html",
     clientId: "0oae0chrocZumXh7y297",          // XDGE Test SMART App (prod)
     scope: "launch/patient offline_access openid fhirUser",
@@ -28,12 +28,15 @@ SMART.init({
                 resolveReferences: "medicationReference",
                 pageLimit: 0,
                 flat: true
+            }),
+            client.request(`/Patient/${client.patient.id}/$everything`, { 
+                flat: true, pageLimit: 0 
             })
         ]);
     })
     .then(
-        ([patient, meds]) => {
-            render(<App patient={patient} meds={meds} />, rootElement);
+        ([patient, meds, everything]) => {
+            render(<App patient={patient} meds={meds} everything={everything}/>, rootElement);
         },
         error => {
             console.error(error);
