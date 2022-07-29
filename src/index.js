@@ -10,7 +10,7 @@ const rootElement = document.getElementById('root');
 SMART.init({
     // iss: "https://r4.smarthealthit.org",
     iss: "https://api.platform.athenahealth.com/432/brand/2/csg/12/fhir/r4",
-    redirectUri: "index.html",
+    redirectUri: "test.html",
     clientId: "0oae0chrocZumXh7y297",          // XDGE Test SMART App (prod)
     scope: "launch/patient offline_access openid fhirUser",
 
