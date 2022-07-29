@@ -24,19 +24,23 @@ SMART.init({
         // Fetch MedicationRequest and Patient in parallel to load the app faster
         return Promise.all([
             client.patient.read(),
-            client.request(`/MedicationRequest?patient=${client.patient.id}`, {
-                resolveReferences: "medicationReference",
-                pageLimit: 0,
-                flat: true
-            }),
-            client.request(`/Patient/${client.patient.id}/$everything`, { 
-                flat: true, pageLimit: 0 
-            })
+            // client.request(`/MedicationRequest?patient=${client.patient.id}`, {
+            //     resolveReferences: "medicationReference",
+            //     pageLimit: 0,
+            //     flat: true
+            // }),
+            // client.request(`/Patient/${client.patient.id}/$everything`, { 
+            //     flat: true, pageLimit: 0 
+            // })
         ]);
     })
     .then(
-        ([patient, meds, everything]) => {
-            render(<App patient={patient} meds={meds} everything={everything}/>, rootElement);
+        ([patient]) => {
+            render(<App 
+                patient={patient} 
+                // meds={meds} 
+                // everything={everything}
+            />, rootElement);
         },
         error => {
             console.error(error);

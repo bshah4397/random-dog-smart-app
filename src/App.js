@@ -107,15 +107,18 @@ function MedRow({ med }) {
   );
 }
 
-function App({ patient, meds, everything }) {
+function App({ 
+  patient, 
+  // meds, 
+  // everything 
+}) {
   console.log(patient);
-  console.log(everything);
   return (
     <div className="App" style={{padding: '20px'}}>
       {patient ? <PatientVisualizer patient={patient} /> : <h1>Loading</h1>}
       <hr/>
 
-      <table className="table table-hover">
+      {/* <table className="table table-hover">
         <thead>
           <tr>
             <th>Medication</th>
@@ -129,7 +132,7 @@ function App({ patient, meds, everything }) {
             <MedRow key={med.id} med={med} />
           ))}
         </tbody>
-      </table>
+      </table> */}
       {/* <pre>{ JSON.stringify(meds, null, 4) }</pre> */}
     </div>
   );
