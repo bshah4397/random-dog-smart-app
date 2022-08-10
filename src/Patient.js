@@ -40,7 +40,7 @@ function PatientBanner(patient) {
 function MedRow({ med }) {
   const name = getMedicationName(
     getPath(med, "medicationCodeableConcept.coding") ||
-      getPath(med, "medicationReference.code.coding")
+    getPath(med, "medicationReference.code.coding")
   );
   return (
     <tr>
@@ -54,33 +54,32 @@ function MedRow({ med }) {
   );
 }
 
-function Patient({ 
-	patient, 
-	meds, 
-  }) {
-	console.log(patient);
-	return (
-	  <div className="App" style={{padding: '20px'}}>
-		{patient ? <PatientVisualizer patient={patient} /> : <h1>Loading</h1>}
-		<hr/>
-  
-		<table className="table table-hover">
-		  <thead>
-			<tr>
-			  <th>Medication</th>
-			  <th>Status</th>
-			  <th>Intent</th>
-			  <th>Dosage Instruction</th>
-			</tr>
-		  </thead>
-		  <tbody>
-			{meds.map((med) => (
-			  <MedRow key={med.id} med={med} />
-			))}
-		  </tbody>
-		</table>
-	  </div>
-	);
-  }
-  
-  export default Patient;
+function Patient({
+  patient,
+  meds,
+}) {
+  console.log(patient);
+  return (
+    <div className="App" style={{ padding: '20px' }}>
+      {patient ? <PatientVisualizer patient={patient} /> : <></>}
+      <hr />
+      {meds ? <table className="table table-hover">
+        <thead>
+          <tr>
+            <th>Medication</th>
+            <th>Status</th>
+            <th>Intent</th>
+            <th>Dosage Instruction</th>
+          </tr>
+        </thead>
+        <tbody>
+          {meds.map((med) => (
+            <MedRow key={med.id} med={med} />
+          ))}
+        </tbody>
+      </table> : <></>}
+    </div>
+  );
+}
+
+export default Patient;

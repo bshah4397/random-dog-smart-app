@@ -4,8 +4,10 @@ import StaticPatient from './StaticPatient';
 
 
 function App({ patient, meds }) {
-  if (!(patient && meds)) console.log('Rendering Static App');
-  if (patient && meds) return <Patient patient={patient} meds ={meds}/>;
+  sessionStorage.clear()
+
+  if (!(patient)) console.log('Rendering Static App');
+  if (patient) return <Patient patient={patient} meds ={meds}/>;
   else return <StaticPatient/>
 }
 
