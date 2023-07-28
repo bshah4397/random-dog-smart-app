@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/random-dog-smart-app/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/random-dog-smart-app/static/js/main.9930fa57.chunk.js",
-    "main.js.map": "/random-dog-smart-app/static/js/main.9930fa57.chunk.js.map",
+    "main.js": "/random-dog-smart-app/static/js/main.f71f94da.chunk.js",
+    "main.js.map": "/random-dog-smart-app/static/js/main.f71f94da.chunk.js.map",
     "runtime-main.js": "/random-dog-smart-app/static/js/runtime-main.96595edd.js",
     "runtime-main.js.map": "/random-dog-smart-app/static/js/runtime-main.96595edd.js.map",
     "static/css/2.cd6b84b0.chunk.css": "/random-dog-smart-app/static/css/2.cd6b84b0.chunk.css",
-    "static/js/2.07f91870.chunk.js": "/random-dog-smart-app/static/js/2.07f91870.chunk.js",
-    "static/js/2.07f91870.chunk.js.map": "/random-dog-smart-app/static/js/2.07f91870.chunk.js.map",
+    "static/js/2.16ef1f90.chunk.js": "/random-dog-smart-app/static/js/2.16ef1f90.chunk.js",
+    "static/js/2.16ef1f90.chunk.js.map": "/random-dog-smart-app/static/js/2.16ef1f90.chunk.js.map",
     "index.html": "/random-dog-smart-app/index.html",
     "static/css/2.cd6b84b0.chunk.css.map": "/random-dog-smart-app/static/css/2.cd6b84b0.chunk.css.map",
     "static/css/main.6dea0f05.chunk.css.map": "/random-dog-smart-app/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.07f91870.chunk.js.LICENSE.txt": "/random-dog-smart-app/static/js/2.07f91870.chunk.js.LICENSE.txt",
+    "static/js/2.16ef1f90.chunk.js.LICENSE.txt": "/random-dog-smart-app/static/js/2.16ef1f90.chunk.js.LICENSE.txt",
     "static/media/location.8fd9cd85.png": "/random-dog-smart-app/static/media/location.8fd9cd85.png",
     "static/media/tracker.1543b769.png": "/random-dog-smart-app/static/media/tracker.1543b769.png"
   },
   "entrypoints": [
     "static/js/runtime-main.96595edd.js",
     "static/css/2.cd6b84b0.chunk.css",
-    "static/js/2.07f91870.chunk.js",
+    "static/js/2.16ef1f90.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.9930fa57.chunk.js"
+    "static/js/main.f71f94da.chunk.js"
   ]
 }
