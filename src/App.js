@@ -1,6 +1,8 @@
 import * as React from "react";
 import Patient from './Patient'
 import StaticPatient from './StaticPatient';
+import { PostMessageFrame } from "./PostMessage";
+import { MessageListener } from "./MessageListener"
 
 
 function App({ patient, meds }) {
@@ -10,6 +12,8 @@ function App({ patient, meds }) {
   if (patient) return <Patient patient={patient} meds ={meds}/>;
   else return (
     <div>
+      <PostMessageFrame/>
+      <hr />
       <button 
         onClick= {() => {
           const messagePayload = {
@@ -43,6 +47,11 @@ function App({ patient, meds }) {
             window.parent.postMessage({ type: 'embeddedAppAPIMessage', method: 'notifyPatientDataChange', methodVersion: "1.0.0" }, '*');
           }}
       > Refresh Patient - Our code </button>
+
+      <br/>
+      <hr />
+
+     <MessageListener />
   </div>
   );
 }
