@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/random-dog-smart-app/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/random-dog-smart-app/static/js/main.69913b4e.chunk.js",
-    "main.js.map": "/random-dog-smart-app/static/js/main.69913b4e.chunk.js.map",
+    "main.js": "/random-dog-smart-app/static/js/main.dff4f117.chunk.js",
+    "main.js.map": "/random-dog-smart-app/static/js/main.dff4f117.chunk.js.map",
     "runtime-main.js": "/random-dog-smart-app/static/js/runtime-main.96595edd.js",
     "runtime-main.js.map": "/random-dog-smart-app/static/js/runtime-main.96595edd.js.map",
     "static/css/2.cd6b84b0.chunk.css": "/random-dog-smart-app/static/css/2.cd6b84b0.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.cd6b84b0.chunk.css",
     "static/js/2.0d1568e5.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.69913b4e.chunk.js"
+    "static/js/main.dff4f117.chunk.js"
   ]
 }
