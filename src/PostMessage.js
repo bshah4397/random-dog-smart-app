@@ -114,6 +114,7 @@ export function PostMessageFrame() {
         <button type="button" onClick={() => handleResizeApp('400')}>400px</button>
         <button type="button" onClick={() => handleResizeApp('600')}>600px</button>
         <button type="button" onClick={() => handleResizeApp('800')}>800px</button>
+        <button type="button" onClick={() => handleResizeApp('1000')}>1000px</button>
         <button type="button" onClick={() => handleResizeApp('default')}>default</button>
       </div>
     </div>
