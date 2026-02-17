@@ -15,7 +15,6 @@ import {
 } from 'grommet';
 import LocationImg from './images/location.png';
 import TrackerImg from './images/tracker.png';
-import ProfileImg from "./images/profile.jpeg";
 
 const theme = {
   global: {

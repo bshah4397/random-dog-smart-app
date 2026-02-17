@@ -95,9 +95,40 @@ export function PostMessageFrame() {
     );
   };
 
+  const handleShowNotificationBadge = () => {
+    window.parent.postMessage(
+      { 
+        type: 'embeddedAppAPIMessage', 
+        method: 'appShowBadge', 
+        methodVersion: "1.0.0", 
+      }, "*"
+    );
+  };
+
+  const handleShowPersistentNotificationBadge = (width) => {
+    window.parent.postMessage(
+      { 
+        type: 'embeddedAppAPIMessage', 
+        method: 'appShowBadgePersistent', 
+        methodVersion: "1.0.0", 
+      }, "*"
+    );
+  };
+
+  const handleClearNotificationBadge = (width) => {
+    window.parent.postMessage(
+      { 
+        type: 'embeddedAppAPIMessage', 
+        method: 'appClearBadge', 
+        methodVersion: "1.0.0", 
+      }, "*"
+    );
+  };
+
+
   return (
     <div style={{ padding: '20px' }}>
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '20px', display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap' }}>
         <button type="button" onClick={handleRefreshClick}>Refresh aOne</button>
         <button type="button" onClick={handleMinimizeApp}>Minimize</button>
         <button type="button" onClick={handleReopenApp}>Reopen in 3 seconds</button>
@@ -107,7 +138,7 @@ export function PostMessageFrame() {
         <button type="button" onClick={handlePopoutApp}>Popout</button>
         <button type="button" onClick={handlePopinApp}>Popin</button>
       </div>
-      <div>
+      <div style={{ marginBottom: '20px', display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap' }}>
         <button type="button" onClick={() => handleResizeApp('50')}>50px</button>
         <button type="button" onClick={() => handleResizeApp('100')}>100px</button>
         <button type="button" onClick={() => handleResizeApp('200')}>200px</button>
@@ -116,6 +147,11 @@ export function PostMessageFrame() {
         <button type="button" onClick={() => handleResizeApp('800')}>800px</button>
         <button type="button" onClick={() => handleResizeApp('1000')}>1000px</button>
         <button type="button" onClick={() => handleResizeApp('default')}>default</button>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap' }}>
+        <button type="button" onClick={handleShowNotificationBadge}>Show Notification Badge</button>
+        <button type="button" onClick={handleShowPersistentNotificationBadge}>Show Persistent Notification Badge</button>
+        <button type="button" onClick={handleClearNotificationBadge}>Remove Notification Badge</button>
       </div>
     </div>
   );
