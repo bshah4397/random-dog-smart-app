@@ -105,6 +105,18 @@ export function PostMessageFrame() {
     );
   };
 
+  const handleShowNotificationBadgeIn3Seconds = () => {
+    window.setTimeout(() => {
+      window.parent.postMessage(
+        { 
+          type: 'embeddedAppAPIMessage', 
+          method: 'appShowBadge', 
+          methodVersion: "1.0.0" 
+        }, "*"
+      );
+    }, 3000);
+  };
+
   const handleShowPersistentNotificationBadge = (width) => {
     window.parent.postMessage(
       { 
@@ -150,6 +162,7 @@ export function PostMessageFrame() {
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap' }}>
         <button type="button" onClick={handleShowNotificationBadge}>Show Notification Badge</button>
+        <button type="button" onClick={handleShowNotificationBadgeIn3Seconds}>Show Notification Badge after 3 seconds</button>
         <button type="button" onClick={handleShowPersistentNotificationBadge}>Show Persistent Notification Badge</button>
         <button type="button" onClick={handleClearNotificationBadge}>Remove Notification Badge</button>
       </div>
