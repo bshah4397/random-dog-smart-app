@@ -137,6 +137,12 @@ export function PostMessageFrame() {
     );
   };
 
+  const handleCopy = async () => {
+    const text = "This is a test message that is to be copied"
+    await navigator.clipboard.writeText(text);
+    alert(`'${text}' should have been copied.`)
+  }
+
 
   return (
     <div style={{ padding: '20px' }}>
@@ -160,11 +166,15 @@ export function PostMessageFrame() {
         <button type="button" onClick={() => handleResizeApp('1000')}>1000px</button>
         <button type="button" onClick={() => handleResizeApp('default')}>default</button>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap' }}>
+      <div style={{ marginBottom: '20px', display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap' }}>
         <button type="button" onClick={handleShowNotificationBadge}>Show Notification Badge</button>
         <button type="button" onClick={handleShowNotificationBadgeIn3Seconds}>Show Notification Badge after 3 seconds</button>
         <button type="button" onClick={handleShowPersistentNotificationBadge}>Show Persistent Notification Badge</button>
         <button type="button" onClick={handleClearNotificationBadge}>Remove Notification Badge</button>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', flexWrap: 'wrap' }}>
+        <button type="button" onClick={handleCopy}>Copy</button>
       </div>
     </div>
   );
